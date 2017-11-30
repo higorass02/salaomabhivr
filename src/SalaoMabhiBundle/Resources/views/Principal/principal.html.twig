@@ -1,0 +1,16 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Teste{% endblock %}
+
+{% block body %}
+
+    <a class="waves-effect waves-light btn">button</a>
+
+
+
+    {% javascripts
+        '@SalaoMabhiBundle/Resources/public/js/Principal/principal.js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

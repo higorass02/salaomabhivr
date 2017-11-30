@@ -1,0 +1,6 @@
+salao_mabhi:
+    resource: "@SalaoMabhiBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+

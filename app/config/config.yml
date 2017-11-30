@@ -1,0 +1,163 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: "@SalaoMabhiBundle/Resources/config/services.yml" }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: en
+
+framework:
+    #esi:             ~
+    #translator:      { fallbacks: ["%locale%"] }
+    secret:          "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    validation:      { enable_annotations: true }
+    #serializer:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale:  "%locale%"
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    session:
+        # handler_id set to null will use default session handler from php.ini
+        handler_id:  ~
+    fragments:       ~
+    http_method_override: true
+
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver:   pdo_mysql
+        host:     "%database_host%"
+        port:     "%database_port%"
+        dbname:   "%database_name%"
+        user:     "%database_user%"
+        password: "%database_password%"
+        charset:  UTF8
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #     path:     "%database_path%"
+
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: "%mailer_transport%"
+    host:      "%mailer_host%"
+    username:  "%mailer_user%"
+    password:  "%mailer_password%"
+    spool:     { type: memory }
+# Assetic Configuration
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+    assets:
+        jquery:
+            inputs:
+                - '%kernel.root_dir%/../vendor/components/jquery/jquery.min.js'
+        materialize_css:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/css/materialize.min.css'
+        materialize_js:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/js/materialize.min.js'
+        roboto_regular_eot:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Regular.eot'
+            output: 'fonts/roboto/Roboto-Regular.eot'
+        roboto_regular_ttf:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Regular.ttf'
+            output: 'fonts/roboto/Roboto-Regular.ttf'
+        roboto_regular_woff:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Regular.woff2'
+            output: 'fonts/roboto/Roboto-Regular.woff2'
+        roboto_regular_woff2:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Regular.woff'
+            output: 'fonts/roboto/Roboto-Regular.woff'
+        roboto_bold_eot:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Bold.eot'
+            output: 'fonts/roboto/Roboto-Bold.eot'
+        roboto_bold_ttf:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Bold.ttf'
+            output: 'fonts/roboto/Roboto-Bold.ttf'
+        roboto_bold_woff:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Bold.woff'
+            output: 'fonts/roboto/Roboto-Bold.woff'
+        roboto_bold_woff2:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Bold.woff2'
+            output: 'fonts/roboto/Roboto-Bold.woff2'
+        roboto_light_eot:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Light.eot'
+            output: 'fonts/roboto/Roboto-Light.eot'
+        roboto_light_ttf:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Light.ttf'
+            output: 'fonts/roboto/Roboto-Light.ttf'
+        roboto_light_woff:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Light.woff'
+            output: 'fonts/roboto/Roboto-Light.woff'
+        roboto_light_woff2:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Light.woff2'
+            output: 'fonts/roboto/Roboto-Light.woff2'
+        roboto_medium_eot:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Medium.eot'
+            output: 'fonts/roboto/Roboto-Medium.eot'
+        roboto_medium_ttf:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Medium.ttf'
+            output: 'fonts/roboto/Roboto-Medium.ttf'
+        roboto_medium_woff:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Medium.woff'
+            output: 'fonts/roboto/Roboto-Medium.woff'
+        roboto_medium_woff2:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Medium.woff2'
+            output: 'fonts/roboto/Roboto-Medium.woff2'
+        roboto_thin_eot:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Thin.eot'
+            output: 'fonts/roboto/Roboto-Thin.eot'
+        roboto_thin_ttf:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Thin.ttf'
+            output: 'fonts/roboto/Roboto-Thin.ttf'
+        roboto_thin_woff:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Thin.woff'
+            output: 'fonts/roboto/Roboto-Thin.woff'
+        roboto_thin_woff2:
+            inputs:
+                - '%kernel.root_dir%/../vendor/materialize/css/fonts/roboto/Roboto-Thin.woff2'
+            output: 'fonts/roboto/Roboto-Thin.woff2'
