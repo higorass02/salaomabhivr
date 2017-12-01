@@ -1,16 +1,40 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}Teste{% endblock %}
+{% block title %}Salão Mabhi - Principal{% endblock %}
+
+{% block stylesheets %}
+    {%stylesheets
+        '@SalaoMabhiBundle/Resources/public/css/Principal/principal.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
 
 {% block body %}
-
-    <a class="waves-effect waves-light btn">button</a>
-
-
-
+    <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="tudo fundo">
+        <div class="title_sl">
+            <h2>Salao Mabhi</h2>
+        </div>
+            <div class="container">
+                <nav >
+                    <ul class="menu">
+                        <li><a class="menu" href="{{ path("menu_principal") }}">Menu</a></li>
+                        <li><a class="menu" href="{{ path("home") }}">Localização</a> </li>
+                        <li><a class="menu" href="{{ path("home") }}">Contatos</a></li>
+                    </ul>
+                </nav>
+            </div>
+    </div>
+    </div>
+    </div>
+    <img src="" />
     {% javascripts
         '@SalaoMabhiBundle/Resources/public/js/Principal/principal.js'
     %}
-        <script type="text/javascript" src="{{ asset_url }}"></script>
+        <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
+
+
 {% endblock %}

@@ -1,0 +1,38 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Salão Mabhi - Agenda{% endblock %}
+
+{% block stylesheets %}
+    {%stylesheets
+        '@SalaoMabhiBundle/Resources/public/css/Principal/principal.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+    <div class="rodteto">
+
+        <input id="hs" type="button" onclick="xama();" value="Deslogar">
+
+        <center><h1 >Menu Principal</h1></center>
+    </div>
+    <div class="container">
+        <nav>
+            <ul class="menu" style="margin-top: 10%;">
+                <!--li style="margin-left: 20%;"><a  href="agenda/SubmenuAgenda.php">Agenda</a></li>
+                <li style="margin-right: 20%; margin-top: -6%;"><a  href="contatos/GerenciarContatos.php">Gerenciar Contatos</a></li-->
+                <li ><a  href="#Agendar">Agendar</a></li>
+                <li ><a  href="#Gerenciar Contatos">Gerenciar Contatos</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    {% javascripts
+        '@SalaoMabhiBundle/Resources/public/js/Principal/principal.js'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+
+{% endblock %}

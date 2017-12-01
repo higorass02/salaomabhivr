@@ -1,0 +1,37 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Salão Mabhi - Agenda{% endblock %}
+
+{% block stylesheets %}
+    {%stylesheets
+        '@SalaoMabhiBundle/Resources/public/css/Login/login.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+
+    <form method="POST" action="validacao.php" class="login">
+
+        <legend><h2>Login Agenda</h2></legend>
+        <br>
+        <label >Usuário</label>
+        <br>
+        <input type="text" name="txt_usuario" placeholder="Digite o seu usuário" >
+        <br><br>
+        <label>Senha</label>
+        <br>
+
+        <input type="submit" name="btnLogin" value="Acessar">
+        <input type="reset" onclick="window.location='../index.html';" name="" value="Voltar">
+
+    </form>
+    {% javascripts
+        '@SalaoMabhiBundle/Resources/public/js/Principal/principal.js'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+
+{% endblock %}

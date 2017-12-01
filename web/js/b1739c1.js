@@ -1,3 +1,3 @@
 window.onload = function(){
-    console.log('Onload ahahha');
+    console.log('Onload OOAOAOAOAOAOAO');
 }

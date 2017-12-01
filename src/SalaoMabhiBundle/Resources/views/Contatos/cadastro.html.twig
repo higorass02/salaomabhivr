@@ -1,0 +1,64 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Salão Mabhi - Agenda{% endblock %}
+
+{% block stylesheets %}
+    {%stylesheets
+        '@SalaoMabhiBundle/Resources/public/css/Contatos/estilo_contatos.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+    <div class="rodteto">
+        <!--input id="hs" type="button" onclick="xama();" value="Deslogar"-->
+    </div>
+
+    <div class="container" >
+        <nav class="nav_menu">
+            <ul class="menu">
+                <li><a  href="">Menu Contatos</a></li>
+                <!--li><a  href="">Cadastrar Contato</a> </li>
+                <li><a  href="">Listar Contatos</a></li>
+                <li><a  href="">Atualizar Contatos</a></li>
+                <li><a  href="">Deletar Contatos</a></li-->
+            </ul>
+        </nav>
+        <section>
+            <h1>Cadastro de Usuario</h1>
+            <hr><br><br>
+            <form method="POST" action="../crud/criar.php">
+
+                <label>Nome</label>
+                <br>
+                <input type="text" class="campo" name="txt_nome" value="" placeholder="Nome" />
+                <br>
+
+                <!--label>Telefone</label>
+                <br>
+                <input type="text" class="campo" name="txt_tel"id="telefone" value="" maxlength="15" placeholder="Telefone" />
+                <br>
+                <label>Endereço</label>
+                <br>
+                <input type="text" class="campo" name="txt_ende" value="" placeholder="Endereço" />
+                <br-->
+
+                <br>
+                <input type="hidden" name="acao" value=""/>
+                <input type="submit" value="Enviar" name="btn_enviar"/>
+                <input type="reset" name="">
+
+
+
+            </form>
+        </section>
+    </div>
+    {% javascripts
+        '@SalaoMabhiBundle/Resources/public/js/Principal/principal.js'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+
+{% endblock %}
